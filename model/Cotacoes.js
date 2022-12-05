@@ -9,8 +9,8 @@ module.exports = class  {
         return await db.query('SELECT * FROM cotacoes WHERE id = ?', [id]);
     }
 
-    static async createCotacao(veiculo_id, dist_rod_pav, dist_rod_n_pav, carga, custo) {
-        return await db.query('INSERT INTO cotacoes (veiculo_id, dist_rod_pav, dist_rod_n_pav, carga, custo, created_at) VALUES (?, ?, ?, ?, ?, ?)', [veiculo_id, dist_rod_pav, dist_rod_n_pav, carga, custo, Date.now()]);
+    static async createCotacao(veiculo_id, dist_rod_pav, dist_rod_n_pav, carga, custo,cliente) {
+        return await db.query('INSERT INTO cotacoes (veiculo_id, dist_rod_pav, dist_rod_n_pav, carga, custo, cliente, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)', [veiculo_id, dist_rod_pav, dist_rod_n_pav, carga, custo, cliente, Date.now()]);
     }
 
     static async updateCotacao(id, veiculo_id, dist_rodovia_pav, dist_rodovia_nao_pav, carga, custo) {
